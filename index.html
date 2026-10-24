@@ -129,7 +129,7 @@
       <p>The current guarded beta does not route Voice to Bill through Android's system speech-recognition service; it uses the online Voice to Bill path described above or shows the manual fallback. Compatibility code for Android speech recognition is present but inactive. If a future release enables it, the phone's selected speech provider may process microphone audio or transcript data under that provider's privacy terms, and this policy and the Play disclosure will be updated first.</p>
 
       <h2>5. Camera, Gallery and Scan Bill</h2>
-      <p>Scan Bill is optional. Camera permission is requested only when you choose the camera. You may choose an image from the Android photo picker without granting camera permission. Sahuji checks and re-encodes the selected image locally before reading it.</p>
+      <p>Scan Bill is optional. Taking a photo opens the phone's camera app, and choosing an existing image opens Android's photo picker. Sahuji does not request direct camera or broad photo-library access. It checks and re-encodes the selected image locally before reading it.</p>
       <p>Scan Bill uses bundled Google ML Kit Latin and Devanagari text-recognition models on the phone. Sahuji does not upload the bill image or recognized bill text for OCR. Detected rows remain an editable local draft and do not change inventory until you review and explicitly confirm a purchase.</p>
       <p>Google states that the ML Kit Android SDK may send limited diagnostics such as app/device information, a per-install identifier, feature and image configuration/size, performance measurements, event types and error codes. Google's published collected-data list for bundled Text Recognition does not list the bill pixels or recognized text. The listed diagnostics are used for diagnostics and usage analytics.</p>
 
@@ -170,7 +170,7 @@
 
       <h2>14. Your choices and permissions</h2>
       <ul>
-        <li>You can deny camera access and use Gallery or manual inventory entry.</li>
+        <li>You can cancel the system camera or photo picker and use manual inventory entry.</li>
         <li>You can deny microphone access and use Type Bill.</li>
         <li>You can disable Daily Reports or Android notification permission.</li>
         <li>You choose whether and where to share a receipt, WhatsApp reminder or encrypted backup.</li>
