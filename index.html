@@ -96,28 +96,29 @@
       <h1>Privacy Policy</h1>
       <p>This policy explains how the Sahuji Android app handles information for billing, inventory, khata, purchases, reminders, backups, Scan Bill and Voice to Bill.</p>
       <div class="meta" aria-label="Policy details">
-        <p><span class="label">Last updated</span>August 26, 2026</p>
+        <p><span class="label">Last updated</span>October 26, 2026</p>
         <p><span class="label">Developer</span>New Glitch</p>
         <p><span class="label">Privacy contact</span><a href="mailto:sahuji.support@gmail.com">sahuji.support@gmail.com</a></p>
       </div>
-      <p class="notice"><strong>Beta scope:</strong> Sahuji is local-first. Manual billing, local inventory, khata and local encrypted backup do not require a Sahuji online account.</p>
+      <p class="notice"><strong>Local-first:</strong> Sahuji is local-first. Manual billing, local inventory, khata and local encrypted backup do not require a Sahuji online account.</p>
     </header>
 
     <article>
       <h2>1. Scope</h2>
-      <p>This Privacy Policy applies to the Sahuji Android application provided by New Glitch. It describes the current Google Play beta. If a later version adds cloud accounts, cloud backup, payment processing, analytics or other online services, we will update this policy before using those features.</p>
+      <p>This Privacy Policy applies to the Sahuji Android application provided by New Glitch. It describes the current Sahuji release, including online Voice to Bill as described below. We will update this policy before adding features that materially change information handling, such as cloud accounts, automatic cloud backup, payment processing or general analytics.</p>
 
       <h2>2. Information stored on your device</h2>
       <p>Sahuji stores most information locally on your phone so the main shop workflows can work without a reliable internet connection. Depending on what you enter, this can include:</p>
       <ul>
         <li>shop name, owner name, local owner/staff roles and a protected local PIN record;</li>
-        <li>products, aliases, units, prices, stock quantities, low-stock limits and stock movements;</li>
-        <li>sales, bill rows, purchase records, price history, reports and payment method/status notes;</li>
+        <li>products, aliases, units, prices, stock quantities, low-stock limits, stock movements and stock adjustments;</li>
+        <li>sales, bill rows, purchase records, price history, reports, payment method/status notes, source-linked financial corrections, payment/reversal evidence and historical transaction evidence;</li>
         <li>khata/customer names, optional phone numbers or addresses, balances, entries and collection notes;</li>
         <li>merchant QR images and labels, app settings, notification history and reminder preferences;</li>
-        <li>local encrypted backups, restore history and a local recovery key.</li>
+        <li>local encrypted backups, restore history and backup-file recovery keys.</li>
       </ul>
       <p>The Shop Setup screen asks for a shop name, owner name and four-digit PIN. This creates local access control, not an online Sahuji account. The PIN is stored as a salted cryptographic hash rather than readable PIN text.</p>
+      <p>The backup-file recovery key is separate from the Owner PIN and Owner PIN recovery code. Neither Owner PIN credential can replace the matching backup-file recovery key.</p>
 
       <h2>3. Online Voice to Bill and microphone data</h2>
       <p>Voice to Bill is optional and requires internet access. When you tap the voice action and allow microphone access, Sahuji records a short audio clip and sends it over HTTPS to the configured Sahuji voice service. The request can also contain your selected language, a random per-install quota identifier, limited product matching details (such as product ID, name, alias, unit and selling price), and the editable rows already in the current bill draft.</p>
@@ -126,7 +127,7 @@
       <p>The Sahuji voice service uses paid Gemini Developer API processing. Under Google's paid-service terms, Google processes prompts and responses under its processor terms and does not use them to improve its products. Google may retain prompts, contextual information and output for 55 days for abuse monitoring, including automated checks and authorized review of flagged content for policy enforcement. The application code does not save Voice Turn audio, context or transcripts in a Sahuji application database. Supabase may retain invocation and network logs according to the project's plan and settings.</p>
 
       <h2>4. Android speech recognition</h2>
-      <p>The current guarded beta does not route Voice to Bill through Android's system speech-recognition service; it uses the online Voice to Bill path described above or shows the manual fallback. Compatibility code for Android speech recognition is present but inactive. If a future release enables it, the phone's selected speech provider may process microphone audio or transcript data under that provider's privacy terms, and this policy and the Play disclosure will be updated first.</p>
+      <p>The current release does not route Voice to Bill through Android's system speech-recognition service; it uses the online Voice to Bill path described above or shows the manual fallback. Compatibility code for Android speech recognition is present but inactive. If a future release enables it, the phone's selected speech provider may process microphone audio or transcript data under that provider's privacy terms, and this policy and the Play disclosure will be updated first.</p>
 
       <h2>5. Camera, Gallery and Scan Bill</h2>
       <p>Scan Bill is optional. Taking a photo opens the phone's camera app, and choosing an existing image opens Android's photo picker. Sahuji does not request direct camera or broad photo-library access. It checks and re-encodes the selected image locally before reading it.</p>
@@ -134,7 +135,7 @@
       <p>Google states that the ML Kit Android SDK may send limited diagnostics such as app/device information, a per-install identifier, feature and image configuration/size, performance measurements, event types and error codes. Google's published collected-data list for bundled Text Recognition does not list the bill pixels or recognized text. The listed diagnostics are used for diagnostics and usage analytics.</p>
 
       <h2>6. Sales, inventory, khata and payments</h2>
-      <p>Sahuji's sales, inventory, purchases, khata/customer credit and payment notes stay in local app storage in this beta. Sahuji may show or store Cash, QR or Credit labels and shopkeeper-confirmed payment status, but it does not process a bank payment, verify a QR transfer or provide lending in the current beta.</p>
+      <p>Sahuji's sales, inventory, purchases, khata/customer credit, payment notes, sale corrections and historical transaction evidence stay in local app storage. Correction records can include source-linked financial corrections, payment/reversal evidence and stock adjustments. Sahuji may show or store Cash, QR or Credit labels and shopkeeper-confirmed payment status, but it does not process a bank payment, verify a QR transfer or provide lending.</p>
 
       <h2>7. Notifications and Daily Reports</h2>
       <p>If you enable notifications, Sahuji can schedule a local Daily Report reminder and maintain a local notification inbox for Daily Reports and low-stock attention. Notification permission, channel status, chosen reminder time, report summaries, read state and minimal delivery receipts stay on your device. Lock-screen Daily Report text does not include customer, credit, profit or sales-value detail. Android and device-manufacturer battery settings can affect delivery time.</p>
@@ -142,13 +143,18 @@
       <h2>8. Sharing and WhatsApp</h2>
       <p>Sahuji shares information only after you choose a share action. A receipt can include the shop name/contact, customer name if entered, bill items, quantities, prices, total, payment label/reference and date. A khata reminder link can contain the customer's phone number, name, balance and message. An encrypted backup file can include the local shop records described in this policy.</p>
       <p>Android shows the system share sheet or opens the WhatsApp link, and you choose the recipient or external app. Sahuji does not control how that app or recipient stores or uses the information. Review the content and recipient before sending.</p>
+      <p>For encrypted backup files, Android's system document picker lets you manually save or open files in locations you choose, including local Documents and compatible cloud-storage providers such as Google Drive. These transfers are initiated by you. Sahuji does not provide automatic Google Drive backup or automatic cloud synchronization of shop records.</p>
 
       <h2>9. Local backup and restore</h2>
-      <p>The current beta provides local encrypted backup, export, import and restore. Backup content is encrypted with AES-GCM and uses a recovery key stored on your device. Google Drive and Sahuji cloud backup are disabled in this beta. Android cloud backup and Android device-to-device transfer are also disabled for Sahuji's app-private data.</p>
-      <p>If you export a backup, you control where the encrypted file goes. Keep both the file and recovery key safe. Sahuji cannot delete a file after another app or storage provider receives it.</p>
+      <p>Sahuji provides encrypted local backups and manual backup export and import. Selecting "Backup now" creates a backup on your device. To protect your records if your phone is lost, damaged, or replaced, you must also save an encrypted backup file outside your phone.</p>
+      <p>You can use Android's system document picker to save or open encrypted backup files in locations you choose, including local Documents and compatible cloud-storage providers such as Google Drive. These transfers are initiated by you. Sahuji does not currently provide automatic Google Drive backup or automatic cloud synchronization of shop records.</p>
+      <p>Exported backups are protected using AES-GCM encryption. To restore an encrypted backup, you need the matching backup-file recovery key associated with that file. The backup-file recovery key is separate from your Owner PIN and Owner PIN recovery code. A new installation can use the original backup-file key to restore the selected backup without replacing its own default backup key.</p>
+      <p>Keep both your exported backup file and its matching recovery key safely outside your phone. If the matching recovery key is lost, Sahuji cannot decrypt that backup. Saving a file through a cloud-storage provider does not necessarily mean its cloud upload has finished; verify that the file is available from another device or location.</p>
+      <p>Restoring a backup can recover your saved shop records, including inventory, sales, customer credit, payments, financial corrections and settings. The restored shop uses the Owner PIN established or approved through the replacement-device restore process.</p>
+      <p>Android's automatic backup and device-to-device transfer of Sahuji's private app data remain disabled.</p>
 
       <h2>10. Analytics, diagnostics and crash reporting</h2>
-      <p>The guarded beta has no advertising SDK, general analytics SDK or crash-reporting SDK. Optional Sahuji workflow/evaluation upload endpoints are disabled in this build, so any related queue or aggregate voice counters remain on the device. Google ML Kit's limited SDK diagnostics are the exception described in section 5.</p>
+      <p>The current release has no advertising SDK, general analytics SDK or crash-reporting SDK. Optional Sahuji workflow/evaluation upload endpoints are disabled in this build, so any related queue or aggregate voice counters remain on the device. Google ML Kit's limited SDK diagnostics are the exception described in section 5.</p>
 
       <h2>11. Third-party services</h2>
       <p>Depending on the feature you choose, data may be processed by:</p>
@@ -162,23 +168,23 @@
       <p>These services may receive ordinary network metadata, such as an IP address, when an online request is made. Their handling is also governed by their own terms and privacy policies.</p>
 
       <h2>12. Retention</h2>
-      <p>Local shop records remain on the device until you change or delete them through Sahuji, use the protected factory reset, clear app data or uninstall the app. Exported receipts and backup files remain wherever you sent or saved them until you delete them there.</p>
+      <p>Local shop records remain on the device until you change or delete them through Sahuji, use the protected factory reset, clear app data or uninstall the app. Uninstalling Sahuji removes app-local data but does not automatically delete separately exported receipts and backup files from external storage; those files remain wherever you sent or saved them until you delete them there.</p>
       <p>Voice quota records contain a one-way install-token hash, counters and time windows and are pruned as later quota reservations run; no independent scheduled cleanup is currently verified. Google may retain paid Gemini API prompts, contextual information and output for 55 days for abuse monitoring. Supabase platform-log retention depends on the selected plan and settings. Google does not publish an ML Kit retention period on its Android Data Safety disclosure page.</p>
 
       <h2>13. Security</h2>
-      <p>Sahuji uses Android app-private storage, blocks cleartext app traffic, disables Android cloud/device-transfer backup, hashes local PINs and encrypts exported backup content. Provider credentials and Android signing keys are not bundled in the client. No application can promise complete security, so keep your phone lock, Sahuji PIN, recovery key and exported backup files protected.</p>
+      <p>Sahuji uses Android app-private storage, blocks cleartext app traffic, disables Android automatic backup and device-to-device transfer of app-private data, hashes local PINs and encrypts exported backup content. Provider credentials and Android signing keys are not bundled in the client. No application can promise complete security, so keep your phone lock, Owner PIN, Owner PIN recovery code, matching backup-file recovery key and exported backup files protected.</p>
 
       <h2>14. Your choices and permissions</h2>
       <ul>
         <li>You can cancel the system camera or photo picker and use manual inventory entry.</li>
         <li>You can deny microphone access and use Type Bill.</li>
         <li>You can disable Daily Reports or Android notification permission.</li>
-        <li>You choose whether and where to share a receipt, WhatsApp reminder or encrypted backup.</li>
+        <li>You choose whether and where to share a receipt or WhatsApp reminder, and whether and where to export an encrypted backup. Restoring a backup requires its matching backup-file recovery key.</li>
         <li>You should review every voice or scanned draft before confirming a business change.</li>
       </ul>
 
       <h2>15. Deleting data</h2>
-      <p>The current beta does not create an online Sahuji account. You can remove app-local data with the protected factory-reset control or by uninstalling Sahuji. You must separately delete exported receipts/backups from the files, cloud storage, messaging app or recipient where you placed them. If a future release creates online accounts, we will add the required in-app and web account-deletion process before launch.</p>
+      <p>Sahuji does not create an online account. You can remove app-local data with the protected factory-reset control or by uninstalling Sahuji. Uninstalling does not delete exported receipts or backups from external storage. You must separately delete exported receipts/backups from the files, cloud storage, messaging app or recipient where you placed them. If a future release creates online accounts, we will add the required in-app and web account-deletion process before launch.</p>
 
       <h2>16. Children's privacy</h2>
       <p>Sahuji is a business tool for shopkeepers and is not directed to children. We do not knowingly design the app to collect children's personal information. If you believe a child has provided information through the app, contact us.</p>
